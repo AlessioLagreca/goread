@@ -11,8 +11,6 @@ func main() {
 	standardInput := flag.Bool("i", false, "read from stdin")
 	flag.Parse()
 
-	filename := os.Args[1]
-
 	if *standardInput {
 		inputBytes, err := io.ReadAll(os.Stdin)
 		if err != nil {
@@ -22,6 +20,13 @@ func main() {
 
 		fmt.Println(string(inputBytes))	
 	}
+
+	if flag.NArg() < 1 {
+		// fmt.Println("Usage: goread [filename]")
+		os.Exit(1)
+	}
+
+	filename := os.Args[1]
 
 	data, err := os.ReadFile(filename)
 	if err != nil {
