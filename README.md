@@ -1,13 +1,13 @@
-# goread
+`goread` is a command-line interface (CLI) utility written in Go, designed to replicate the functionality of the classic
+Unix utility cat.
 
-`goread` is a simple command-line interface (CLI) program written in Go.
+## How to use
 
-## Features
+To use `goread`, clone and `cd` into the repository and run the following command to run the provided binary:
 
-- Read input from stdin or files.
-- Option to number the lines in the output.
-
-## Usage
+```sh
+./goread file
+```
 
 ### Flags
 
@@ -20,6 +20,22 @@
 
 To read from stdin, use the `-i` flag:
 
-```head -n2 test.txt| ./goread -i
+```sh
+head -n2 test.txt| ./goread -i
+```
 
+#### Concatenate multiple files
+
+To concatenate multiple files simply pass the desired filenames as arguments:
+
+```sh
+./goread test.txt test2.txt
+```
+
+#### Numbered lines in output
+
+To number the lines in the output, use the `-n` flag:
+
+```sh
+./goread test.txt -n
 ```
