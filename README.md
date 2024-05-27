@@ -20,4 +20,6 @@
 
 To read from stdin, use the `-i` flag:
 
-`head -n2 test.txt| ./goread -i`
+```head -n2 test.txt| ./goread -i
+
+```
