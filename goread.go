@@ -33,7 +33,7 @@ func main() {
 			// divide the file into lines
 			text := string(inputBytes)
 			lines := strings.Split(text, "\n")
-			for i, line := range lines {
+			for i, line := range lines[0 : len(lines)-1] {
 				fmt.Printf("%d: %s\n", i+1, line)
 			}	
 			os.Exit(0)
@@ -60,7 +60,7 @@ func main() {
 			// divide the file into lines
 			text := string(inputBytes)
 			lines := strings.Split(text, "\n")
-			for i, line := range lines {
+			for i, line := range lines[0 : len(lines)-1] {
 				fmt.Printf("%d: %s\n", i+1, line)
 			}	
 		}
